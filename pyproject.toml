@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "user-items"
+version = "0.1.0"
+description = ""
+authors = ["Prakash Prajapati <paxprajapati@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.65.2"
+uvicorn = {extras = ["standard"], version = "^0.14.0"}
+SQLAlchemy = "^1.4.18"
+psycopg2 = "^2.9.1"
+pydantic = "^1.8.2"
+python-dotenv = "^0.17"
+alembic = "^1.6.5"
+fire = "^0.4.0"
+docker-test = {path = "docker_test", develop = true}
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.9.2"
+black = "^21.6b0"
+ipdb = "^0.13.9"
+pytest = "<6.1.0"
+
+[tool.poetry.scripts]
+cli = "cli:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
