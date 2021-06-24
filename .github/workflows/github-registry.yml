@@ -49,8 +49,9 @@ jobs:
         with:
           context: ./
           file: ./Dockerfile
+          builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ env.REPO_OWNER }}/user-items:latest
+          tags: ghcr.io/${{ env.REPO_OWNER }}/user-items:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       
